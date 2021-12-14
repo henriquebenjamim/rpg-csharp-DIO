@@ -1,0 +1,16 @@
+C:\rpg-csharp\bin\Debug\net5.0\rpg-csharp.exe
+C:\rpg-csharp\bin\Debug\net5.0\rpg-csharp.deps.json
+C:\rpg-csharp\bin\Debug\net5.0\rpg-csharp.runtimeconfig.json
+C:\rpg-csharp\bin\Debug\net5.0\rpg-csharp.runtimeconfig.dev.json
+C:\rpg-csharp\bin\Debug\net5.0\rpg-csharp.dll
+C:\rpg-csharp\bin\Debug\net5.0\ref\rpg-csharp.dll
+C:\rpg-csharp\bin\Debug\net5.0\rpg-csharp.pdb
+C:\rpg-csharp\obj\Debug\net5.0\rpg-csharp.csproj.AssemblyReference.cache
+C:\rpg-csharp\obj\Debug\net5.0\rpg-csharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\rpg-csharp\obj\Debug\net5.0\rpg-csharp.AssemblyInfoInputs.cache
+C:\rpg-csharp\obj\Debug\net5.0\rpg-csharp.AssemblyInfo.cs
+C:\rpg-csharp\obj\Debug\net5.0\rpg-csharp.csproj.CoreCompileInputs.cache
+C:\rpg-csharp\obj\Debug\net5.0\rpg-csharp.dll
+C:\rpg-csharp\obj\Debug\net5.0\ref\rpg-csharp.dll
+C:\rpg-csharp\obj\Debug\net5.0\rpg-csharp.pdb
+C:\rpg-csharp\obj\Debug\net5.0\rpg-csharp.genruntimeconfig.cache
