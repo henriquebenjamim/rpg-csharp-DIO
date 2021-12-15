@@ -14,7 +14,7 @@ namespace rpg_csharp
             
             
             System.Console.WriteLine($"Olá, {rexxar.Nome}");
-            System.Console.WriteLine("Deseja se aventurar na favela do canal?");
+            System.Console.WriteLine("Deseja se aventurar no bosque de jardim?");
             System.Console.WriteLine("utilize 0 para parar e qualquer outro número para iniciar.");
             int resposta = int.Parse(Console.ReadLine());
             if (resposta != 0)
@@ -90,7 +90,7 @@ namespace rpg_csharp
                         System.Console.WriteLine();
                         System.Console.WriteLine();
                         System.Console.WriteLine();
-                        
+
                     
                     }
 
