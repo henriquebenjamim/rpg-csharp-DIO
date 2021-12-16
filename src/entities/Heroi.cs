@@ -12,7 +12,7 @@ namespace rpg_csharp.src.entities
             this.Nome = Nome;
             this.ClasseFantastica = ClasseFantastica;
             this.Nivel = 1;
-            this.PontosDeVida = 50;
+            this.PontosDeVida = 500;
             this.PontosDeMagia = 50;
             this.NomeDoPet = "Dragão";
         }
@@ -59,12 +59,24 @@ namespace rpg_csharp.src.entities
         {
             // futuramente adicionar um tipo de ataque magico
             Random dado = new Random();
-            int forcaDoAtaque = this.Nivel = dado.Next(1, 20);
+            int forcaDoAtaque = this.Nivel = dado.Next(18, 20);
             // se > 15 no dado, mensagem de critico.
+            int ataqueCritico = forcaDoAtaque + 5;
+            if (forcaDoAtaque > 18)
+            {
+                this.ValorUltimoAtaque = ataqueCritico;
+                
+                return this.Nome + " Atacou com um golpe crítico e realizou "
+                    + ataqueCritico + " de dano.";
+            }
+            else
+            {
+                this.ValorUltimoAtaque = forcaDoAtaque;
 
-            this.ValorUltimoAtaque = forcaDoAtaque;
-            return this.Nome + " Ataca com a sua espada e da " +
-                    forcaDoAtaque + " de dano";
+                return this.Nome + " Ataca com a sua espada e da " +
+                    forcaDoAtaque + " de dano.";
+            }
+
         }
 
         public void ReceberDano(int DanoRecebido)
