@@ -19,24 +19,7 @@ namespace rpg_csharp
             int resposta = int.Parse(Console.ReadLine());
             if (resposta != 0)
             {
-                System.Console.WriteLine("Vamos começar sua jornada.");
-                System.Console.WriteLine("");
-
-                System.Console.WriteLine("A um longo período de tempo houveram vários guerreiros nesta terra," +
-                    "porém um rei que utilizou de magia negra se apossou de todas as terras e manteve" +
-                    "as riquezas para si e nenhuma ao povo, os guerreiros e magos dá época então foram acabar" +
-                    "com o mal. Porém mal sabiam eles que a magia era o menor dos problemas, existia um monstro " +
-                    "ressucitado a mais de 1 milhão de anos chamado Paçoca que era mais poderoso que tudo e foi " +
-                    "liberto novamente. No combate, todos os guerreiros do bem foram derrotados porém utilizaram " +
-                    "de uma magia para selar o inimigo e mantê-lo longe de todos. Hoje temos uma vida mais digna " +
-                    "pela batalha anterior e somos muito gratos a todos os guerreiros.");
-
-                System.Console.WriteLine();
-                System.Console.WriteLine();
-                System.Console.WriteLine("Percebo que você tem uma classe, não é?!");
-                System.Console.WriteLine($"Pelas vestimentas, arrisco dizer que você é {rexxar.ClasseFantastica}. Acertei?");
-                System.Console.WriteLine("Eu sabia! hahahaha!");
-
+                System.Console.WriteLine(rexxar.Historia());
                 System.Console.WriteLine();
                 System.Console.WriteLine("Estou sentindo um pouco de calafrios.");
                 System.Console.WriteLine("Você está sentindo?");

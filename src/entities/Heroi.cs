@@ -54,6 +54,23 @@ namespace rpg_csharp.src.entities
             ;
         }
 
+        public string Historia()
+        {
+            return "Vamos começar sua jornada. \n A um longo período de tempo houveram vários guerreiros nesta terra, \n " +
+                " porém um rei que utilizou de magia negra se apossou de todas as terras e manteve \n " +
+                " as riquezas para si e nenhuma ao povo, os guerreiros e magos dá época então foram acabar \n" +
+                " com o mal. Porém mal sabiam eles que a magia era o menor dos problemas, existia um monstro \n" +
+                " ressucitado a mais de 1 milhão de anos chamado Paçoca que era mais poderoso que tudo e foi \n" +
+                " liberto novamente. No combate, todos os guerreiros do bem foram derrotados porém utilizaram \n" +
+                " de uma magia para selar o inimigo e mantê-lo longe de todos. Hoje temos uma vida mais digna \n" +
+                " pela batalha anterior e somos muito gratos a todos os guerreiros. \n" +
+                "\n " +
+                
+                "Percebo que você tem uma classe, não é?! \n" +
+                "Pelas vestimentas, arrisco dizer que você é "+ this.ClasseFantastica + " Acertei? \n" +
+                "Eu sabia! hahahaha! \n";
+        }
+
         // o virtual permite que outras classes possam sobrescrever ela
         public virtual string Atacar()
         {
