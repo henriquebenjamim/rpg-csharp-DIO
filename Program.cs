@@ -7,15 +7,24 @@ namespace rpg_csharp
     {
         static void Main(string[] args)
         {
+            // System.Console.WriteLine("Olá, seja bem vindo ao rpg csharp...");
+            // System.Console.WriteLine("Qual o seu nome?");
+            // string nome = Console.ReadLine();
+            // System.Threading.Thread.Sleep(1500);
+            // System.Console.WriteLine($"Que nome bonito, {nome}!");
+            // System.Console.WriteLine("Qual a sua classe?");
+            // string classe = Console.ReadLine();
+            // System.Threading.Thread.Sleep(1500);
+
+            Heroi rexxar = new Heroi("xxCoolxx", "Guerreiro");
             
-            Mago rexxar = new Mago("XxCoolxX", "Mago");
-            
-            Inimigo gremlin = new Inimigo("LapoLaCa", "Sereia");
+            Inimigo gremlin = new Inimigo("rei múmia", "monstro");
             
             
-            System.Console.WriteLine($"Olá, {rexxar.Nome}");
+            Batalhar minhaBatalha =  new Batalhar(rexxar.Nome, gremlin.Nome, rexxar.PontosDeVida, gremlin.PontosDeVida, rexxar.RealizarDano(), gremlin.RealizarDano());
+
             System.Console.WriteLine("Deseja se aventurar no bosque de jardim?");
-            System.Console.WriteLine("utilize 0 para parar e qualquer outro número para iniciar.");
+            System.Console.WriteLine("utilize 0 para parar e 1 para iniciar.");
             int resposta = int.Parse(Console.ReadLine());
             if (resposta != 0)
             {
@@ -27,57 +36,13 @@ namespace rpg_csharp
                 if (responderResposta != 0)
                 {
                     System.Console.WriteLine("Acho melhor irmos embora daqui...");
+                    System.Threading.Thread.Sleep(0500);
                     System.Console.WriteLine("Oh, não! Surgiu um inimigo. Devemos lutar contra ele.");
+                    System.Threading.Thread.Sleep(1500);
                     System.Console.WriteLine("Mas peraí, eu não sei lutar, essa bronca quem terá que resolver é você...");
-                    while(rexxar.PontosDeVida > 0 && gremlin.PontosDeVida > 0)
-                    {
-                        System.Console.WriteLine("++++++++++++++");
-                        System.Console.WriteLine(rexxar.Atacar(10)); 
-                        
-                        // System.Console.WriteLine($"{rexxar.Nome} realizou {rexxar.ValorUltimoAtaque} de dano em {gremlin.Nome}");
-                        gremlin.ReceberDano(rexxar.ValorUltimoAtaque);
-                        System.Console.WriteLine($"{gremlin.Nome} agora tem {gremlin.PontosDeVida} de vida.");
-                        System.Console.WriteLine($"{rexxar.Nome} finaliza o turno dele.");
-                        System.Console.WriteLine();
-                        System.Threading.Thread.Sleep(2000);
-
-                        if (gremlin.PontosDeVida <= 0)
-                        {
-                            System.Console.WriteLine();
-                            System.Console.WriteLine($"{gremlin.Nome} recebeu {rexxar.ValorUltimoAtaque} de dano e ficou com {gremlin.PontosDeVida}");
-                            System.Console.WriteLine($"{gremlin.Nome} perdeu a batalha...");
-                        }
-                        
-
-                        System.Console.WriteLine(gremlin.Atacar());
-                        // System.Console.WriteLine($"{gremlin.Nome} realizou {gremlin.ValorUltimoAtaque} de dano em {rexxar.Nome}");
-                        rexxar.ReceberDano(gremlin.ValorUltimoAtaque);
-                        System.Console.WriteLine($"{rexxar.Nome} agora tem {rexxar.PontosDeVida} de vida.");
-                        System.Console.WriteLine($"{gremlin.Nome} finaliza o turno dele.");
-                        System.Threading.Thread.Sleep(2000);
-                        System.Console.WriteLine();
-                        
-                        
-                        if(rexxar.PontosDeVida <= 0)
-                        {
-                            System.Console.WriteLine($"{rexxar.Nome} recebeu {gremlin.ValorUltimoAtaque} de dano. e ficou com {rexxar.PontosDeVida}");
-                            System.Console.WriteLine($"{rexxar.Nome} perdeu a batalha...");
-                        }
-                        
-                        System.Console.WriteLine("Finalizando o turno geral...");
-                        System.Threading.Thread.Sleep(4000);
-                        System.Console.WriteLine("==============================");
-                        System.Console.WriteLine();
-                        System.Console.WriteLine();
-                        System.Console.WriteLine();
-                        System.Console.WriteLine();
-                        System.Console.WriteLine();
-                        System.Console.WriteLine();
-                        System.Console.WriteLine();
-
-                    
-                    }
-
+                    System.Threading.Thread.Sleep(0500);
+                    System.Console.WriteLine();
+                    System.Console.WriteLine(minhaBatalha.Batalhando(rexxar.Nome, gremlin.Nome, rexxar.PontosDeVida, gremlin.PontosDeVida, rexxar.RealizarDano(), gremlin.RealizarDano()));
                 }
 
                 else

@@ -56,7 +56,7 @@ namespace rpg_csharp.src.entities
 
         public string Historia()
         {
-            return "Vamos começar sua jornada. \n A um longo período de tempo houveram vários guerreiros nesta terra, \n " +
+            return "Então iremos começar sua jornada... \n A mais de mil anos houveram guerreiros e magos que protegiam o mundo do mal, \n" +
                 " porém um rei que utilizou de magia negra se apossou de todas as terras e manteve \n " +
                 " as riquezas para si e nenhuma ao povo, os guerreiros e magos dá época então foram acabar \n" +
                 " com o mal. Porém mal sabiam eles que a magia era o menor dos problemas, existia um monstro \n" +
@@ -64,11 +64,8 @@ namespace rpg_csharp.src.entities
                 " liberto novamente. No combate, todos os guerreiros do bem foram derrotados porém utilizaram \n" +
                 " de uma magia para selar o inimigo e mantê-lo longe de todos. Hoje temos uma vida mais digna \n" +
                 " pela batalha anterior e somos muito gratos a todos os guerreiros. \n" +
-                "\n " +
-                
-                "Percebo que você tem uma classe, não é?! \n" +
-                "Pelas vestimentas, arrisco dizer que você é "+ this.ClasseFantastica + " Acertei? \n" +
-                "Eu sabia! hahahaha! \n";
+                "\n ";
+                                
         }
 
         // o virtual permite que outras classes possam sobrescrever ela
@@ -93,7 +90,14 @@ namespace rpg_csharp.src.entities
                 return this.Nome + " Ataca com a sua espada e da " +
                     forcaDoAtaque + " de dano.";
             }
+        }
 
+
+        public int RealizarDano()
+        {
+            Random dado = new Random();
+            int forcaDoAtaque = this.Nivel = dado.Next(1, 20);
+            return forcaDoAtaque;
         }
 
         public void ReceberDano(int DanoRecebido)
