@@ -27,7 +27,7 @@ namespace rpg_csharp
             Inimigo gremlin = new Inimigo("rei múmia", "monstro");
             
             
-            Batalhar minhaBatalha =  new Batalhar(rexxar.Nome, gremlin.Nome, rexxar.PontosDeVida, gremlin.PontosDeVida, rexxar.RealizarDano(), gremlin.RealizarDano());
+            Batalhar minhaBatalha =  new Batalhar(rexxar.Nome, gremlin.Nome, rexxar.PontosDeVida, gremlin.PontosDeVida, rexxar.RealizarDano(), gremlin.RealizarDano(), rexxar.BarraExperiencia, rexxar.Nivel);
 
             Console.Clear();
             System.Console.WriteLine("Deseja se aventurar no bosque de jardim?");
@@ -49,7 +49,7 @@ namespace rpg_csharp
                     System.Console.WriteLine("Mas peraí, eu não sei lutar, essa bronca quem terá que resolver é você...");
                     System.Threading.Thread.Sleep(0500);
                     System.Console.WriteLine();
-                    System.Console.WriteLine(minhaBatalha.Batalhando(rexxar.Nome, gremlin.Nome, rexxar.PontosDeVida, gremlin.PontosDeVida, rexxar.RealizarDano(), gremlin.RealizarDano()));
+                    System.Console.WriteLine(minhaBatalha.Batalhando(rexxar.Nome, gremlin.Nome, rexxar.PontosDeVida, gremlin.PontosDeVida, rexxar.RealizarDano(), gremlin.RealizarDano(), rexxar.BarraExperiencia, rexxar.Nivel));
                 }
 
                 else

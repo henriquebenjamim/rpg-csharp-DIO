@@ -14,10 +14,22 @@ namespace rpg_csharp.src.entities
                 System.Threading.Thread.Sleep(900);
                 Console.Clear();
                 System.Console.WriteLine("Carregando..");
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(900);
                 Console.Clear();
                 System.Console.WriteLine("Carregando...");
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(900);
+                Console.Clear();
+                System.Console.WriteLine("Carregando..");
+                System.Threading.Thread.Sleep(900);
+                Console.Clear();
+                System.Console.WriteLine("Carregando.");
+                System.Threading.Thread.Sleep(900);
+                Console.Clear();
+                System.Console.WriteLine("Carregando..");
+                System.Threading.Thread.Sleep(900);
+                Console.Clear();
+                System.Console.WriteLine("Carregando...");
+                System.Threading.Thread.Sleep(900);
                 i = false;
             
             }

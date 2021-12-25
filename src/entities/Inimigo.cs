@@ -9,7 +9,7 @@ namespace rpg_csharp.src.entities
             this.Nome = Nome;
             this.ClasseFantastica = ClasseFantastica;
             this.Nivel = 1;
-            this.PontosDeVida = 70;
+            this.PontosDeVida = 100;
             this.PontosDeMagia = 15;
             this.NomeDoPet = "Ameba";
         }

@@ -12,11 +12,11 @@ namespace rpg_csharp.src.entities
             this.Nome = Nome;
             this.ClasseFantastica = ClasseFantastica;
             this.Nivel = 1;
-            this.PontosDeVida = 70;
+            this.PontosDeVida = 120;
             this.PontosDeMagia = 50;
             this.NomeDoPet = "Dragão";
         }
-        public Heroi(string nome, int nivel, int pontosDeVida, int pontosDeMagia, string classeFantastica, string nomeDoPet, int valorUltimoAtaque)
+        public Heroi(string nome, int nivel, int pontosDeVida, int pontosDeMagia, string classeFantastica, string nomeDoPet, int valorUltimoAtaque, int barraExperiencia)
         {
             this.Nome = nome;
             this.Nivel = nivel;
@@ -25,6 +25,7 @@ namespace rpg_csharp.src.entities
             this.ClasseFantastica = classeFantastica;
             this.NomeDoPet = nomeDoPet;
             this.ValorUltimoAtaque = valorUltimoAtaque;
+            this.BarraExperiencia = barraExperiencia;
 
         }
         public string Nome { get; set; }
@@ -41,6 +42,8 @@ namespace rpg_csharp.src.entities
         public string NomeDoPet { get; set; }
 
         public int ValorUltimoAtaque { get; set; }
+
+        public int BarraExperiencia { get; set; }
 
         // exemplo de encapsulamento
         public override string ToString()
@@ -97,7 +100,18 @@ namespace rpg_csharp.src.entities
         {
             Random dado = new Random();
             int forcaDoAtaque = this.Nivel = dado.Next(1, 20);
-            return forcaDoAtaque;
+            int ataqueCritico = forcaDoAtaque + 5;
+            if (forcaDoAtaque > 18)
+            {
+                this.ValorUltimoAtaque = ataqueCritico;
+                
+                return forcaDoAtaque;
+            }
+            else
+            {
+                this.ValorUltimoAtaque = forcaDoAtaque;
+                return forcaDoAtaque;
+            }
         }
 
         public void ReceberDano(int DanoRecebido)
