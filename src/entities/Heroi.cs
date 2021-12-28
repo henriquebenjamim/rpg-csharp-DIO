@@ -12,7 +12,7 @@ namespace rpg_csharp.src.entities
             this.Nome = Nome;
             this.ClasseFantastica = ClasseFantastica;
             this.Nivel = 1;
-            this.PontosDeVida = 120;
+            this.PontosDeVida = 80;
             this.PontosDeMagia = 50;
             this.NomeDoPet = "Dragão";
         }
@@ -67,49 +67,53 @@ namespace rpg_csharp.src.entities
                 " liberto novamente. No combate, todos os guerreiros do bem foram derrotados porém utilizaram \n" +
                 " de uma magia para selar o inimigo e mantê-lo longe de todos. Hoje temos uma vida mais digna \n" +
                 " pela batalha anterior e somos muito gratos a todos os guerreiros. \n" +
-                "\n ";
-                                
+                "\n ";                            
         }
 
         // o virtual permite que outras classes possam sobrescrever ela
+        private static readonly Random Rng = new Random();
+
+        public int NextNumber()
+        {
+            return Rng.Next(1, 20);
+        }
         public virtual string Atacar()
         {
             // futuramente adicionar um tipo de ataque magico
             Random dado = new Random();
-            int forcaDoAtaque = this.Nivel = dado.Next(1, 20);
+            //int forcaDoAtaque = this.Nivel = dado.Next(1, 20);
             // se > 15 no dado, mensagem de critico.
+            int forcaDoAtaque = NextNumber();
             int ataqueCritico = forcaDoAtaque + 5;
             if (forcaDoAtaque > 18)
             {
-                this.ValorUltimoAtaque = ataqueCritico;
                 
                 return this.Nome + " Atacou com um golpe crítico e realizou "
                     + ataqueCritico + " de dano.";
             }
             else
             {
-                this.ValorUltimoAtaque = forcaDoAtaque;
-
                 return this.Nome + " Ataca com a sua espada e da " +
                     forcaDoAtaque + " de dano.";
             }
         }
-
-
         public int RealizarDano()
         {
             Random dado = new Random();
-            int forcaDoAtaque = this.Nivel = dado.Next(1, 20);
+            //int forcaDoAtaque = this.Nivel + dado.Next(1, 20);
+            int forcaDoAtaque = NextNumber(); 
             int ataqueCritico = forcaDoAtaque + 5;
             if (forcaDoAtaque > 18)
             {
                 this.ValorUltimoAtaque = ataqueCritico;
+                System.Console.WriteLine($"Critou, deu {ataqueCritico}");
                 
-                return forcaDoAtaque;
+                return ataqueCritico;
             }
             else
             {
                 this.ValorUltimoAtaque = forcaDoAtaque;
+                System.Console.WriteLine($"Saiu {forcaDoAtaque} de dano");
                 return forcaDoAtaque;
             }
         }
@@ -119,16 +123,6 @@ namespace rpg_csharp.src.entities
             this.PontosDeVida = this.PontosDeVida - DanoRecebido;
         }
 
-        // public void Batalhar(string alvo)
-        // {   
-        //     this.Nome = this.Nome;
-        //     this.PontosDeVida = this.PontosDeVida;
-        //     while(PontosDeVida > 0 && alvo > 0)
-        //     {
-        //         System.Console.WriteLine($"Jogador ataca e realiza {Atacar()} de dano.");
-        //         System.Console.WriteLine();
-        //         System.Console.WriteLine($"O inimigo ataca e realiza {alvo.Atacar()} de dano.");
-        //     }
-        // }
     }
+
 }

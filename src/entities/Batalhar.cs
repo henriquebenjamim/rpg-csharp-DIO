@@ -1,3 +1,6 @@
+using System;
+using System.Diagnostics;
+
 namespace rpg_csharp.src.entities
 {
     public class Batalhar
@@ -13,7 +16,6 @@ namespace rpg_csharp.src.entities
             this.Experiencia = experiencia;
             this.Nivel = nivel;
         }
-
         public string Heroi { get; set; }
 
         public string Inimigo { get; set; }
@@ -29,17 +31,20 @@ namespace rpg_csharp.src.entities
         public int Experiencia { get; set; }
 
         public int Nivel { get; set; }
-
+        
         public string Batalhando(string Heroi, string Inimigo, int vidaHeroi, int vidaInimigo, int ataqueHeroi, int ataqueInimigo, int experiencia, int nivel)
         {
             string vencedor = "";
             int turnos = 0;
             while(vidaHeroi > 0 || vidaInimigo > 0)
             {
-                vidaInimigo -= ataqueHeroi;
-                System.Console.WriteLine($"{Heroi} atacou com {ataqueHeroi} de dano em {Inimigo}");
-                System.Console.WriteLine($"{Inimigo} agora tem {vidaInimigo} de vida.");
+                
+                System.Console.WriteLine(ataqueHeroi);
                 System.Console.WriteLine();
+                System.Console.WriteLine($"{Heroi} atacou com {ataqueHeroi} de dano em {Inimigo}");
+                vidaInimigo -= ataqueHeroi;
+                System.Console.WriteLine($"{Inimigo} agora tem {vidaInimigo} de vida.");
+                System.Console.WriteLine("--");
                 System.Threading.Thread.Sleep(1500);
                 turnos += 1;
                 experiencia += 2;
@@ -61,10 +66,12 @@ namespace rpg_csharp.src.entities
 
                     break;
                     
-                } 
-                vidaHeroi -= ataqueInimigo;
+                }
+                
                 System.Console.WriteLine($"{Inimigo} atacou com {ataqueInimigo} de dano em {Heroi}.");
+                vidaHeroi -= ataqueInimigo;
                 System.Console.WriteLine($"{Heroi} agora tem {vidaHeroi} de vida.");
+                System.Console.WriteLine(AtaqueInimigo);
                 System.Console.WriteLine();
                 System.Threading.Thread.Sleep(1500);
                 if(vidaHeroi <= 0)
@@ -74,6 +81,10 @@ namespace rpg_csharp.src.entities
                     vencedor = this.Inimigo;
                     break;
                 }
+                Random dadoHeroi = new Random();
+                ataqueHeroi = dadoHeroi.Next(1, 20);
+                Random dadoInimigo = new Random();
+                ataqueInimigo = dadoInimigo.Next(1, 20);
             }
 
             return vencedor + " Venceu!";

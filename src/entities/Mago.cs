@@ -32,10 +32,6 @@ namespace rpg_csharp.src.entities
 
                 return this.Nome + " Ataca com o seu cajado e dá " + forcaDoAtaque + " de dano." ;
             }
-                
-            
-            
-
         }
 
         public string Atacar(int bonus){
@@ -61,7 +57,6 @@ namespace rpg_csharp.src.entities
                 return this.Nome + " Ataca com bônus com seu cajado e dá " + 
                 forcaDoAtaque + " de dano.";
             }
-            
         }
     }
 }
