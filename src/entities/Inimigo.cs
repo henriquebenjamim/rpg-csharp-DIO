@@ -4,14 +4,11 @@ namespace rpg_csharp.src.entities
 {
     public class Inimigo : Heroi
     {
-        public Inimigo(string Nome, string ClasseFantastica) : base(Nome, ClasseFantastica)
+        public Inimigo(string nome, string classeFantastica) : base(nome, classeFantastica)
         {
-            this.Nome = Nome;
-            this.ClasseFantastica = ClasseFantastica;
-            this.Nivel = 1;
-            this.PontosDeVida = 90;
-            this.PontosDeMagia = 15;
-            this.NomeDoPet = "Ameba";
+            Nivel = 1;
+            PontosDeVida = 90;
+            PontosDeMagia = 15;
         }
         public override string Atacar(){
             Random dado = new Random();
@@ -29,6 +26,27 @@ namespace rpg_csharp.src.entities
                 this.ValorUltimoAtaque = forcaDoAtaque;
             
                 return this.Nome + " Ataca e dá " + ValorUltimoAtaque + " de dano.";
+            }
+        }
+
+        public override int RealizarDano()
+        {
+            Random dado = new Random();
+            //int forcaDoAtaque = this.Nivel + dado.Next(1, 20);
+            int forcaDoAtaque = NextNumber(); 
+            int ataqueCritico = forcaDoAtaque + 5;
+            if (forcaDoAtaque > 18)
+            {
+                this.ValorUltimoAtaque = ataqueCritico;
+                System.Console.WriteLine($"Critou, deu {ataqueCritico}");
+                
+                return ataqueCritico;
+            }
+            else
+            {
+                this.ValorUltimoAtaque = forcaDoAtaque;
+                System.Console.WriteLine($"Saiu {forcaDoAtaque} de dano");
+                return forcaDoAtaque;
             }
         }
     }

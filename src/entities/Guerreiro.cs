@@ -2,9 +2,9 @@ using System;
 
 namespace rpg_csharp.src.entities
 {
-    public class Mago : Heroi
+    public class Guerreiro : Heroi
     {
-        public Mago(string nome, string classeFantastica) : base(nome, classeFantastica)
+        public Guerreiro(string nome, string classeFantastica) : base(nome, classeFantastica)
         {
             Nivel = 1;
             PontosDeVida = 45;

@@ -21,7 +21,7 @@ namespace rpg_csharp
             System.Console.WriteLine(carregandoTela.Carregando());
             System.Console.WriteLine(carregandoTela.BoasVindas());
 
-            Heroi rexxar = new Heroi(nome, classe);
+            Heroi rexxar = new Guerreiro(nome, classe);
             Inimigo gremlin = new Inimigo("rei múmia", "monstro");
             Batalhar minhaBatalha =  new Batalhar(rexxar.Nome, gremlin.Nome, rexxar.PontosDeVida, gremlin.PontosDeVida, rexxar.NextNumber(), gremlin.NextNumber(), rexxar.BarraExperiencia, rexxar.Nivel);
             
